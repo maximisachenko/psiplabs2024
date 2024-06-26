@@ -1,0 +1,214 @@
+/* Шапка сайта */
+header {
+    background-color: none
+        ;
+    color: #FAEBD7;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    header h1 {
+        margin: 0;
+    }
+
+nav {
+    background-color: #2980b9;
+}
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: inline-block;
+    }
+
+/* Общие стили для всего документа */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0; /* Цвет заднего фона */
+    background-image: url('background.jpg'); /* Путь к изображению заднего фона */
+    background-size: cover; /* Растягиваем изображение на весь экран */
+    color: #333;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* Стили для текстовых элементов */
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+/* Стили для списков */
+ul, ol {
+    margin-bottom: 20px;
+}
+
+/* Стили для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Увеличиваем отступы в ячейках */
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Цвет фона для заголовков */
+    font-style: italic; /* Заголовки курсивом */
+}
+
+td {
+    background-color: #fff; /* Цвет фона для обычных ячеек */
+    font-style: normal; /* Содержимое обычным текстом */
+}
+
+/* Дополнительные стили для четных и нечетных строк */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Цвет фона для четных строк */
+}
+
+tr:nth-child(odd) {
+    background-color: #fff; /* Цвет фона для нечетных строк */
+}
+
+
+/* Стили для форм */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Стили для гиперссылок */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+    a:hover {
+        text-decoration: underline;
+        color: #001a50; /* Изменение цвета при наведении */
+    }
+
+    a:active {
+        color: #a3c1ff; /* Изменение цвета при нажатии */
+    }
+
+/* Стили для семантических тегов */
+article {
+    margin-bottom: 20px;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+footer {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-social-icons {
+    margin-top: 15px;
+}
+
+    .footer-social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #fff;
+        font-size: 20px;
+    }
+
+        .footer-social-icons a:hover {
+            color: #ffd700; /* Цвет при наведении */
+        }
+.image-with-caption figcaption {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666; /* Цвет текста */
+    background-color: rgba(255, 255, 255, 0.8); /* Прозрачный фон */
+    padding: 10px; /* Внутренние отступы */
+    border-radius: 5px; /* Закругленные углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+    margin-left: 20px; /* Отступ слева от изображения */
+    max-width: 200px; /* Максимальная ширина подписи */
+}
+.image-gallery {
+    display: flex;
+}
+
+.image-with-caption {
+    margin-right: 20px; /* Отступ между изображениями */
+}
+
+    .image-with-caption img {
+        max-width: 100%;
+    }
+
+    .image-with-caption figcaption {
+        font-style: italic;
+        font-size: 14px;
+    }

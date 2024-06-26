@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    grid-column: 1 / span 2; /* Логотип занимает первые две колонки */
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+    justify-self: end; /* Выравнивание кнопок справа */
+    grid-column: 17 / span 4; /* Кнопки занимают последние четыре колонки */
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+main {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+.section1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+    .section1 .text-block {
+        display: grid;
+        gap: 10px;
+    }
+
+    .section1 .image-block {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+
+.section2 .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.section2 .image {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section3 {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+    .section3 .map {
+        border: 1px solid #ccc;
+        padding: 120px;
+        background-color: #f9f9f9;
+    }
+
+footer {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+    footer .links {
+        display: grid;
+        gap: 10px;
+    }
+
+        footer .links a {
+            text-decoration: none;
+            color: blue;
+            text-align: right;
+        }
+
+    footer .author {
+        margin-top: 10px;
+    }
+
+.section4 {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.section5 {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}

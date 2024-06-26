@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="windows-1251">
+    <title>Product Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include styles from the second CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="container" id="info">
+            <!-- Surname Firstname Patronymic -->
+            <p id="name">Isachenko Maxim Andreevich</p>
+
+            <!-- Date of birth -->
+            <div id="birthdate">26.05.2005</div>
+
+            <!-- Any image -->
+            <img src="Mol.jpg" alt="Example image">
+        </div>
+        <!-- Insert content from the first HTML file -->
+        <div class="form-container">
+            <h2>Order a Call Back</h2>
+            <p>We are constantly improving the quality of our services. By ordering a callback on our website, you can be sure that our managers will contact you at a convenient time.</p>
+            <form id="callback-form">
+                <div class="form-group">
+                    <label for="name">Your name:<span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                    <div class="error-message" id="name-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:<span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7(___)___-__-__">
+                    <div class="error-message" id="phone-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="time">Convenient time for a call:</label>
+                    <input type="text" id="time" name="time" placeholder="Example: from 9:00 to 18:00">
+                    <div class="error-message" id="time-error"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Insert script from the second file -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('callback-form');
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const timeInput = document.getElementById('time');
+
+            // Maximum length for each field
+            const maxLength = {
+                name: 10, // Example: maximum name length is 50 characters
+                phone: 15, // Example: maximum phone length is 15 characters
+                time: 50 // Example: maximum time length for a call is 50 characters
+            };
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Reset previous errors
+                resetErrors();
+
+                // Validate each field
+                if (!validateName()) {
+                    displayError('name', 'Please enter your name.');
+                }
+
+                if (!validatePhone()) {
+                    displayError('phone', 'Please enter a valid phone number.');
+                }
+
+                if (!validateTime()) {
+                    displayError('time', 'Please enter a convenient time for a call.');
+                }
+
+                // If no errors, additional actions can be performed, e.g., form submission
+                if (isFormValid()) {
+                    // Add code here for form submission, e.g., via AJAX
+                    alert('Form submitted!');
+                }
+            });
+
+            // Function to reset errors
+            function resetErrors() {
+                document.querySelectorAll('.error-message').forEach(function (element) {
+                    element.textContent = '';
+                });
+                document.querySelectorAll('.form-group').forEach(function (element) {
+                    element.classList.remove('error');
+                });
+            }
+
+            // Function to display error messages
+            function displayError(inputName, errorMessage) {
+                const errorElement = document.getElementById(`${inputName}-error`);
+                if (errorElement) {
+                    errorElement.textContent = errorMessage;
+                    const formGroup = errorElement.closest('.form-group');
+                    if (formGroup) {
+                        formGroup.classList.add('error');
+                    }
+                }
+            }
+
+            // Function to validate name
+            function validateName() {
+                const value = nameInput.value.trim();
+                if (value.length > maxLength.name) {
+                    displayError('name', `Maximum length exceeded (${maxLength.name} characters)`);
+                    return false;
+                }
+                return value !== '';
+            }
+
+            // Function to validate phone number
+            function validatePhone() {
+                const value = phoneInput.value.trim();
+                if (value.length > maxLength.phone) {
+                    displayError('phone', `Maximum length exceeded (${maxLength.phone} characters)`);
+                    return false;
+                }
+                return /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/.test(value); // Example of simple validation
+            }
+
+            // Function to validate call time
+            function validateTime() {
+                const value = timeInput.value.trim();
+                if (value.length > maxLength.time) {
+                    displayError('time', `Maximum length exceeded (${maxLength.time} characters)`);
+                    return false;
+                }
+                return value !== '';
+            }
+
+            // Function to check if the entire form is valid
+            function isFormValid() {
+                return validateName() && validatePhone() && validateTime();
+                // Add other checks if needed
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="windows-1251">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Current Year</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showCurrentYear() {
+            var currentDate = new Date();
+            var currentYear = currentDate.getFullYear();
+            alert("Current year: " + currentYear);
+        }
+    </script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <p>Working with Date object</p>
+    <button onclick="showCurrentYear()">Show Year</button>
+    <p>Working with loop control operators</p>
+    <button onclick="showName()">Show Name and Surname</button>
+    <p>Working with Array object</p>
+    <button onclick="findMinInArray()">Find Minimum Element in Array</button>
+    <p>Working with Math object</p>
+    <button onclick="calculateFormula()">Calculate Formula</button>
+    <p>Working with STRING strings</p>
+    <button class="string-operation" onclick="calculateStringOperations()">Perform String Operations</button>
+    <div id="stringOutput" class="string-output"></div>
+    <div id="resultOutput"></div>
+    <div id="nameOutput"></div>
+    <script>
+        function showName() {
+            var firstName = "Maxim"; // Replace with your first name
+            var lastName = "Isachenko"; // Replace with your last name
+            var n = 7;
+            var repetitions = n + 5;
+            var outputDiv = document.getElementById('nameOutput');
+
+            if (outputDiv.innerHTML === '') {
+                for (var i = 0; i < repetitions; i++) {
+                    var paragraph = document.createElement('p');
+                    paragraph.textContent = lastName + " " + firstName;
+                    outputDiv.appendChild(paragraph);
+                }
+            } else {
+                outputDiv.innerHTML = ''; // Clear results
+            }
+        }
+
+        function findMinInArray() {
+            var array = [];
+            for (var i = 0; i < 5; i++) {
+                array.push(Math.floor(Math.random() * 100)); // Generate random numbers from 0 to 99
+            }
+            var minElement = Math.min(...array);
+            alert("Array: " + array.join(', ') + "\nMinimum element in array: " + minElement);
+        }
+    </script>
+</body>
+</html>

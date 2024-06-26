@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.section1 {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+    .section1 .text-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 2;
+    }
+
+    .section1 .image-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #f9f9f9;
+        flex: 1;
+    }
+
+    .section1 .button-container {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+.section2 .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.section2 .image {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+    .section3 .map {
+        border: 1px solid #ccc;
+        padding: 120px;
+        background-color: #f9f9f9;
+        width: 100%;
+        max-width: 1250px;
+    }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+    footer .links {
+        display: flex;
+        gap: 10px;
+    }
+
+        footer .links a {
+            text-decoration: none;
+            color: blue;
+        }
+
+.section4, .section5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .section1 {
+        flex-direction: column;
+    }
+
+        .section1 .text-block, .section1 .image-block {
+            flex: 1 1 100%;
+        }
+
+    .section2 .image {
+        flex: 1 1 calc(100% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        nav button {
+            width: 100%;
+        }
+
+    .section1 .button-container {
+        flex-direction: column;
+    }
+
+        .section1 .button-container button {
+            width: 100%;
+        }
+
+    .section2 .image {
+        padding: 10px;
+    }
+
+    .section3 .map {
+        padding: 60px;
+    }
+}
